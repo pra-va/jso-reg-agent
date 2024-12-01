@@ -13,11 +13,14 @@ ___
 ### RUNNING THE APPLICATION ON YOUR MACHINE
 1. Clone the repository.
 2. Start `./docker-compose.yaml`. This will start a PostgreSQL database on port `5432` and execute local database 
-    initialization script `./init-db.sql`.
+   initialization script `./init-db.sql`.
 3. You can connect to the local database with:
     * URL: `jdbc:postgresql://localhost:5432/jso_reg_agent`
     * Username: `dml`
     * Password: `dml`
+4. Run the application with `./gradlew bootRun`.
+5. If application started successfully, you should be able to access `http://localhost:8080` and see `Hello, World!` 
+   message.
 
 #### About the database
 There are two users automatically created in `./init-db.sql`: ddl and dml. ddl user is used for schema creation and

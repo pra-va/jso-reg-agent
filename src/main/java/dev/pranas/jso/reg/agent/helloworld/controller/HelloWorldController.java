@@ -15,6 +15,11 @@ public class HelloWorldController {
     // Poor practice. Using repo directly in controller just for testing purposes.
     private final HelloWorldRepository helloWorldRepository;
 
+    @GetMapping
+    public String sayHello() {
+        return "<h1>Hello, World!</h1>";
+    }
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void helloWorld(@Validated @RequestBody HelloWorldRestRequest request) {
