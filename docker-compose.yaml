@@ -1,0 +1,14 @@
+services:
+    database:
+        image: postgres:17.2
+        container_name: db
+        restart: unless-stopped
+        environment:
+            POSTGRES_USER: local-master
+            POSTGRES_PASSWORD: local-master
+            POSTGRES_DB: jso_reg_agent
+        ports:
+            - "5432:5432"
+        volumes:
+            - ./.docker/data/db:/var/lib/postgresql/data
+            - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
